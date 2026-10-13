@@ -1,0 +1,561 @@
+:root{
+  --chalkboard:   #1b2e28;
+  --chalkboard-2: #24382f;
+  --paper:        #f5f3e7;
+  --panel:        #ffffff;
+  --ink:          #24302c;
+  --chalk-yellow: #e8c547;
+  --chalk-blue:   #7fb3b0;
+  --rule:         #ded8c4;
+  --radius:       10px;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+html,
+body{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Verdana", "Segoe UI", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* =========================
+   PAGE
+   ========================= */
+
+#page{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+#header{
+  background: var(--chalkboard);
+  color: var(--paper);
+  padding: 22px 42px 20px;
+  border-bottom: 4px solid var(--chalk-yellow);
+}
+
+#header .brand{
+  margin: 0 0 3px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: 14px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--chalk-blue);
+}
+
+#header .page-title{
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: normal;
+  font-size: 32px;
+  letter-spacing: .01em;
+}
+
+
+/* =========================
+   MAIN LAYOUT
+   ========================= */
+
+#body-wrapper{
+  display: flex;
+  align-items: stretch;
+  flex: 1 0 auto;
+}
+
+
+/* =========================
+   SIDE MENU
+   ========================= */
+
+#menu{
+  flex: 0 0 112px;
+  background: var(--chalkboard-2);
+  padding: 26px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+#menu a{
+  display: block;
+  width: 62px;
+  height: 62px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 2px solid transparent;
+
+  transition:
+    transform .15s ease,
+    border-color .15s ease,
+    box-shadow .15s ease;
+}
+
+#menu a img{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#menu a:hover,
+#menu a:focus-visible{
+  transform: translateY(-2px);
+  border-color: var(--chalk-blue);
+  outline: none;
+}
+
+#menu a.active{
+  border-color: var(--chalk-yellow);
+  box-shadow:
+    0 0 0 2px rgba(232,197,71,0.35),
+    0 4px 10px rgba(0,0,0,0.12);
+}
+
+
+/* =========================
+   CONTENT
+   ========================= */
+
+#content{
+  flex: 1 1 auto;
+  width: 100%;
+  max-width: 1180px;
+  padding: 42px 54px 70px;
+}
+
+#content p{
+  max-width: 72ch;
+  margin-top: 0;
+  margin-bottom: 22px;
+}
+
+.lede{
+  max-width: 76ch;
+  font-size: 18px;
+  line-height: 1.75;
+  margin-bottom: 30px;
+}
+
+
+/* =========================
+   HERO IMAGE
+   ========================= */
+
+.hero-image{
+  display: block;
+  width: 100%;
+  max-width: 72ch;
+  height: auto;
+
+  margin: 34px 0 42px;
+
+  border-radius: var(--radius);
+
+  box-shadow:
+    0 8px 24px rgba(27, 46, 40, 0.16);
+}
+
+
+/* =========================
+   HEADINGS
+   ========================= */
+
+#content h2{
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: normal;
+  color: var(--chalkboard);
+  border-bottom: 2px solid var(--rule);
+  padding-bottom: 6px;
+  margin-top: 34px;
+}
+
+#content h2:first-child{
+  margin-top: 0;
+}
+
+
+/* =========================
+   LISTS
+   ========================= */
+
+#content ul{
+  max-width: 72ch;
+  padding-left: 24px;
+  margin-top: 10px;
+  margin-bottom: 28px;
+}
+
+#content li{
+  margin-bottom: 10px;
+}
+
+#content li strong{
+  color: var(--chalkboard);
+}
+
+
+/* =========================
+   CARDS
+   ========================= */
+
+.card{
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--chalk-yellow);
+  border-radius: var(--radius);
+  padding: 18px 22px;
+  margin-bottom: 22px;
+}
+
+.card h2{
+  margin-top: 0;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.card .meta{
+  font-size: 13px;
+  color: #5b6763;
+  margin: 2px 0 10px;
+}
+
+.card .meta strong{
+  color: var(--ink);
+}
+
+.card ol{
+  margin: 8px 0;
+  padding-left: 22px;
+}
+
+
+/* =========================
+   LINKS / BUTTONS
+   ========================= */
+
+.download-link{
+  display: inline-block;
+  margin-top: 6px;
+  padding: 8px 16px;
+
+  background: var(--chalkboard);
+  color: var(--paper);
+
+  text-decoration: none;
+  border-radius: var(--radius);
+
+  font-size: 13px;
+
+  transition:
+    background .15s ease,
+    color .15s ease,
+    transform .15s ease;
+}
+
+.download-link:hover{
+  background: var(--chalk-yellow);
+  color: var(--chalkboard);
+  transform: translateY(-1px);
+}
+
+.back-to-top{
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--chalk-blue);
+  text-decoration: underline;
+}
+
+
+/* =========================
+   CONTACT FORM
+   ========================= */
+
+.contact-form{
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 22px;
+  max-width: 480px;
+}
+
+.contact-form label{
+  display: block;
+  font-weight: bold;
+  margin: 12px 0 4px;
+}
+
+.contact-form label:first-child{
+  margin-top: 0;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea{
+  width: 100%;
+  padding: 9px 11px;
+
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+  outline: 2px solid rgba(127,179,176,0.45);
+  border-color: var(--chalk-blue);
+}
+
+.contact-form textarea{
+  min-height: 110px;
+  resize: vertical;
+}
+
+.contact-form button{
+  margin-top: 16px;
+  padding: 10px 22px;
+
+  background: var(--chalk-yellow);
+  color: var(--chalkboard);
+
+  border: none;
+  border-radius: var(--radius);
+
+  font-weight: bold;
+  cursor: pointer;
+
+  transition:
+    background .15s ease,
+    color .15s ease;
+}
+
+.contact-form button:hover{
+  background: var(--chalkboard);
+  color: var(--paper);
+}
+
+
+/* =========================
+   MAIL
+   ========================= */
+
+.mail-box{
+  margin-top: 8px;
+}
+
+.mail-box a{
+  color: var(--chalkboard);
+  font-weight: bold;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+#footer{
+  text-align: center;
+  padding: 16px;
+
+  font-size: 12px;
+
+  color: var(--chalk-blue);
+  background: var(--chalkboard-2);
+}
+
+
+/* =========================
+   SESSION INFO (header)
+   ========================= */
+
+#header .session-info{
+  margin: 10px 0 0;
+  font-size: 13px;
+  color: var(--chalk-blue);
+}
+
+#header .session-info a{
+  color: var(--paper);
+}
+
+
+/* =========================
+   MESSAGES (FORMS)
+   ========================= */
+
+.error-message{
+  background: #fbe9e7;
+  color: #b3261e;
+  border: 1px solid #b3261e;
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  max-width: 480px;
+  margin-bottom: 16px;
+}
+
+.success-message{
+  background: #e7f3ea;
+  color: #2e6b3e;
+  border: 1px solid #2e6b3e;
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  max-width: 480px;
+  margin-bottom: 16px;
+}
+
+
+/* =========================
+   ACTION LINK (ADD NEW...)
+   ========================= */
+
+.action-link{
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 8px 16px;
+
+  background: var(--chalk-yellow);
+  color: var(--chalkboard);
+
+  text-decoration: none;
+  border-radius: var(--radius);
+  font-weight: bold;
+  font-size: 13px;
+
+  transition: background .15s ease, color .15s ease;
+}
+
+.action-link:hover{
+  background: var(--chalkboard);
+  color: var(--paper);
+}
+
+
+/* =========================
+   ROW ACTIONS ([DELETE] [EDIT])
+   ========================= */
+
+.row-actions{
+  font-size: 12px;
+  font-weight: normal;
+  white-space: nowrap;
+  margin-left: 10px;
+}
+
+.row-actions a{
+  color: var(--chalkboard);
+}
+
+
+/* =========================
+   LOGIN PAGE
+   ========================= */
+
+.login-wrapper{
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.login-wrapper #content{
+  display: flex;
+  justify-content: center;
+  padding-top: 60px;
+}
+
+.login-card{
+  max-width: 380px;
+  width: 100%;
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 800px){
+
+  #header{
+    padding: 18px 24px;
+  }
+
+  #header .page-title{
+    font-size: 27px;
+  }
+
+  #menu{
+    flex: 0 0 82px;
+    padding: 20px 0;
+    gap: 14px;
+  }
+
+  #menu a{
+    width: 52px;
+    height: 52px;
+  }
+
+  #content{
+    padding: 32px 28px 55px;
+  }
+
+  .lede{
+    font-size: 16px;
+  }
+
+  .hero-image{
+    margin: 28px auto 36px;
+  }
+}
+
+
+@media (max-width: 560px){
+
+  #body-wrapper{
+    flex-direction: column;
+  }
+
+  #menu{
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    padding: 12px 10px;
+    gap: 8px;
+  }
+
+  #menu a{
+    width: 48px;
+    height: 48px;
+  }
+
+  #content{
+    padding: 28px 20px 45px;
+  }
+
+  .lede{
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  #content ul{
+    padding-left: 20px;
+  }
+}
