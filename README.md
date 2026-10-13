@@ -4,9 +4,7 @@ A small website built with **PHP 8 + MySQL/MariaDB**. It has user login (roles:
 **Tutor** and **Student**), announcements, course documents, assignments and a
 contact form. The website text is in Greek.
 
-It runs on your own computer with **XAMPP** – no university server (such as
-`webpages.auth.gr`) is needed.
-
+It runs on your own computer with **XAMPP** 
 ## Requirements
 - [XAMPP](https://www.apachefriends.org/) (includes Apache, PHP and MySQL/MariaDB), PHP 8.0 or newer.
 
